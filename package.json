@@ -6,9 +6,96 @@
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "code-hopper:toggle"
+    "atom-workspace": [
+      "code-hopper:jump-to-symbol",
+      "code-hopper:jump-back",
+      "code-hopper:refresh-index"
+    ]
+  },
+  "activationHooks": [
+    "language-java:grammar-used",
+    "language-python:grammar-used",
+    "language-kotlin:grammar-used",
+    "language-c:grammar-used",
+    "language-javascript:grammar-used",
+    "language-typescript:grammar-used",
+    "language-rust:grammar-used",
+    "language-shellscript:grammar-used",
+    "language-html:grammar-used",
+    "language-css:grammar-used",
+    "language-go:grammar-used",
+    "language-dart:grammar-used"
+  ],
+  "configSchema": {
+    "ctagsPath": {
+      "type": "string",
+      "default": "ctags",
+      "description": "Path to the ctags executable."
+    },
+    "rgPath": {
+      "type": "string",
+      "default": "rg",
+      "description": "Path to the ripgrep executable."
+    },
+    "refreshIntervalMinutes": {
+      "type": "integer",
+      "default": 5,
+      "minimum": 1,
+      "description": "How often Code Hopper refreshes its ctags index."
+    },
+    "indexDirectory": {
+      "type": "string",
+      "default": "",
+      "description": "Directory used to store generated ctags index files. Leave empty to use the default Pulsar user config directory."
+    },
+    "excludePatterns": {
+      "type": "array",
+      "default": [
+        ".git",
+        ".gradle",
+        ".idea",
+        ".settings",
+        "target",
+        "build",
+        "out",
+        "dist",
+        "coverage",
+        "node_modules",
+        "vendor",
+        ".venv",
+        "venv",
+        "__pycache__",
+        "generated",
+        "gen"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "description": "Directories excluded from symbol indexing and fallback search."
+    },
+    "directJumpThreshold": {
+      "type": "integer",
+      "default": 85,
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Minimum score required for a single candidate to jump directly."
+    },
+    "maxCandidates": {
+      "type": "integer",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 500,
+      "description": "Maximum candidates shown in the jump list."
+    }
   },
   "repository": "https://github.com/nekomorph-woo/code-hopper",
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
