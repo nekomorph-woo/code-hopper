@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle code-hopper",
+        "command": "code-hopper:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "code-hopper",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "code-hopper:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
