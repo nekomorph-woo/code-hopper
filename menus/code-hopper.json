@@ -2,8 +2,12 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle code-hopper",
-        "command": "code-hopper:toggle"
+        "label": "Code Hopper: Jump to Symbol",
+        "command": "code-hopper:jump-to-symbol"
+      },
+      {
+        "label": "Code Hopper: Jump Back",
+        "command": "code-hopper:jump-back"
       }
     ]
   },
@@ -15,8 +19,16 @@
           "label": "code-hopper",
           "submenu": [
             {
-              "label": "Toggle",
-              "command": "code-hopper:toggle"
+              "label": "Jump to Symbol",
+              "command": "code-hopper:jump-to-symbol"
+            },
+            {
+              "label": "Jump Back",
+              "command": "code-hopper:jump-back"
+            },
+            {
+              "label": "Refresh Index",
+              "command": "code-hopper:refresh-index"
             }
           ]
         }

@@ -1,5 +1,6 @@
 {
-  "atom-workspace": {
-    "ctrl-alt-o": "code-hopper:toggle"
+  "atom-text-editor:not([mini])": {
+    "alt-g alt-d": "code-hopper:jump-to-symbol",
+    "alt-g alt-b": "code-hopper:jump-back"
   }
 }

@@ -5,4 +5,85 @@
 @import "ui-variables";
 
 .code-hopper {
+  box-sizing: border-box;
+  width: 560px;
+  max-width: calc(100vw - 96px);
+  color: @text-color;
+  background: @overlay-background-color;
+  border: 1px solid @overlay-border-color;
+  border-radius: @component-border-radius;
+  box-shadow: 0 8px 24px fade(@base-background-color, 45%);
+  overflow: hidden;
+}
+
+.code-hopper-filter {
+  width: 100%;
+  box-sizing: border-box;
+  padding: @component-padding;
+  color: @text-color;
+  background: @input-background-color;
+  border: 0;
+  border-bottom: 1px solid @overlay-border-color;
+  outline: none;
+}
+
+.code-hopper-candidates {
+  max-height: 40vh;
+  margin: 0;
+  padding: @component-padding 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+}
+
+.code-hopper-candidate,
+.code-hopper-empty {
+  padding: @component-padding @component-padding * 1.5;
+}
+
+.code-hopper-candidate {
+  cursor: pointer;
+
+  &.selected {
+    color: @text-color-selected;
+    background: @background-color-selected;
+  }
+}
+
+.code-hopper-candidate-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-hopper-candidate-detail {
+  margin-top: 2px;
+  color: @text-color-subtle;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-hopper-candidate.selected .code-hopper-candidate-detail {
+  color: fade(@text-color-selected, 80%);
+}
+
+.code-hopper-empty {
+  color: @text-color-subtle;
+}
+
+.code-hopper-status {
+  padding: 0 @component-padding;
+  color: @text-color-subtle;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  line-height: inherit;
+  cursor: pointer;
+
+  &:hover {
+    color: @text-color;
+  }
 }
