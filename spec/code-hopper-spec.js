@@ -16,13 +16,15 @@ describe('CodeHopper', () => {
   });
 
   describe('activation', () => {
-    it('registers the v0.1 navigation commands', () => {
+    it('registers the navigation commands', () => {
       waitsForPromise(() => activationPromise);
 
       runs(() => {
         expect(atom.commands.findCommands({ target: workspaceElement }).some((command) => command.name === 'code-hopper:jump-to-symbol')).toBe(true);
         expect(atom.commands.findCommands({ target: workspaceElement }).some((command) => command.name === 'code-hopper:jump-back')).toBe(true);
         expect(atom.commands.findCommands({ target: workspaceElement }).some((command) => command.name === 'code-hopper:refresh-index')).toBe(true);
+        expect(atom.commands.findCommands({ target: workspaceElement }).some((command) => command.name === 'code-hopper:search-symbol')).toBe(true);
+        expect(atom.commands.findCommands({ target: workspaceElement }).some((command) => command.name === 'code-hopper:find-references')).toBe(true);
       });
     });
   });

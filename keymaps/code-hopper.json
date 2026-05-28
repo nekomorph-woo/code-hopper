@@ -1,6 +1,8 @@
 {
   "atom-text-editor:not([mini])": {
     "alt-g alt-d": "code-hopper:jump-to-symbol",
-    "alt-g alt-b": "code-hopper:jump-back"
+    "alt-g alt-b": "code-hopper:jump-back",
+    "alt-g alt-s": "code-hopper:search-symbol",
+    "alt-g alt-r": "code-hopper:find-references"
   }
 }

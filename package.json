@@ -9,7 +9,9 @@
     "atom-workspace": [
       "code-hopper:jump-to-symbol",
       "code-hopper:jump-back",
-      "code-hopper:refresh-index"
+      "code-hopper:refresh-index",
+      "code-hopper:search-symbol",
+      "code-hopper:find-references"
     ]
   },
   "activationHooks": [
@@ -47,6 +49,14 @@
       "type": "string",
       "default": "",
       "description": "Directory used to store generated ctags index files. Leave empty to use the default Pulsar user config directory."
+    },
+    "sourceRoots": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "description": "Optional project-relative directories to index. Leave empty to auto-detect common source roots."
     },
     "excludePatterns": {
       "type": "array",

@@ -8,6 +8,14 @@
       {
         "label": "Code Hopper: Jump Back",
         "command": "code-hopper:jump-back"
+      },
+      {
+        "label": "Code Hopper: Search Symbol",
+        "command": "code-hopper:search-symbol"
+      },
+      {
+        "label": "Code Hopper: Find References",
+        "command": "code-hopper:find-references"
       }
     ]
   },
@@ -25,6 +33,14 @@
             {
               "label": "Jump Back",
               "command": "code-hopper:jump-back"
+            },
+            {
+              "label": "Search Symbol",
+              "command": "code-hopper:search-symbol"
+            },
+            {
+              "label": "Find References",
+              "command": "code-hopper:find-references"
             },
             {
               "label": "Refresh Index",
